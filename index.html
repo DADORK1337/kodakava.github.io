@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Креативный продюсер | Мобильные игры Midcore</title>
+    <title>Creative Producer | Mobile Games</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6C63FF;
-            --primary-dark: #5752D4;
-            --secondary: #FF6584;
-            --accent: #36D1DC;
-            --dark: #1A1A2E;
-            --darker: #0F0F1B;
-            --light: #F5F5F7;
-            --gray: #8A8A9D;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
-            --border-radius: 16px;
+            --primary: #000000;
+            --secondary: #666666;
+            --accent: #8A8A8A;
+            --light: #F5F5F5;
+            --dark: #1A1A1A;
+            --background: #FFFFFF;
+            --transition: all 0.3s ease;
+            --border: 1px solid #E5E5E5;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
         }
         
         * {
@@ -35,81 +32,65 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--light);
-            background-color: var(--darker);
-            overflow-x: hidden;
+            color: var(--primary);
+            background-color: var(--background);
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
         }
         
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
         
         .section-title {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 600;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 2px;
+            color: var(--primary);
         }
         
         .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray);
-            margin-bottom: 60px;
-            max-width: 600px;
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 50px;
+            max-width: 500px;
         }
         
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 14px 32px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--primary);
             color: white;
             border: none;
-            border-radius: 50px;
+            border-radius: 2px;
             cursor: pointer;
             transition: var(--transition);
-            font-weight: 600;
+            font-weight: 500;
             text-decoration: none;
-            box-shadow: var(--shadow);
+            font-size: 0.9rem;
         }
         
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            background: var(--dark);
         }
         
         .btn-secondary {
             background: transparent;
-            border: 2px solid var(--primary);
+            border: 1px solid var(--primary);
             color: var(--primary);
         }
         
         .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
+            background: var(--light);
         }
         
         /* Header */
@@ -119,15 +100,10 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 20px 0;
-            transition: var(--transition);
-        }
-        
-        header.scrolled {
-            background: rgba(26, 26, 46, 0.95);
+            padding: 25px 0;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: var(--border);
         }
         
         .navbar {
@@ -137,15 +113,8 @@
         }
         
         .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo-icon {
+            font-size: 1.2rem;
+            font-weight: 600;
             color: var(--primary);
         }
         
@@ -155,24 +124,10 @@
         }
         
         .nav-links a {
-            font-weight: 500;
+            font-weight: 400;
             transition: var(--transition);
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
+            font-size: 0.9rem;
+            color: var(--secondary);
         }
         
         .nav-links a:hover {
@@ -182,7 +137,7 @@
         .hamburger {
             display: none;
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
         
         /* Hero Section */
@@ -190,236 +145,167 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.05"><polygon fill="%236C63FF" points="0,1000 1000,0 1000,1000"/></svg>');
-            background-size: cover;
+            padding-top: 80px;
         }
         
         .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
+            max-width: 600px;
         }
         
         .hero-badge {
             display: inline-block;
-            padding: 8px 20px;
-            background: rgba(108, 99, 255, 0.2);
-            color: var(--primary);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            padding: 6px 12px;
+            background: var(--light);
+            color: var(--secondary);
+            border-radius: 2px;
+            font-size: 0.8rem;
+            font-weight: 500;
             margin-bottom: 20px;
-            border: 1px solid rgba(108, 99, 255, 0.3);
+            border: var(--border);
         }
         
         .hero-title {
-            font-size: 4rem;
-            font-weight: 800;
+            font-size: 3rem;
+            font-weight: 600;
             line-height: 1.1;
             margin-bottom: 20px;
         }
         
-        .hero-title span {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
         .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray);
+            font-size: 1.1rem;
+            color: var(--secondary);
             margin-bottom: 40px;
-            max-width: 600px;
+            max-width: 500px;
         }
         
         .hero-btns {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
         
-        .hero-image {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45%;
-            height: 80%;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-hover);
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
         /* Stats Section */
-        .stats {
-            background: var(--dark);
-        }
-        
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 30px;
+            border-top: var(--border);
+            border-bottom: var(--border);
+            padding: 40px 0;
         }
         
-        .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: var(--border-radius);
+        .stat-item {
             text-align: center;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
         }
         
         .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
         
         .stat-text {
-            color: var(--gray);
-            font-weight: 500;
+            color: var(--secondary);
+            font-size: 0.9rem;
         }
         
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 40px;
         }
         
         .project-card {
-            background: var(--dark);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: var(--border);
         }
         
-        .project-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-hover);
+        .project-card:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
         }
         
-        .project-header {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            position: relative;
+        .project-image {
+            height: 300px;
+            background: var(--light);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
+            color: var(--secondary);
+            border: var(--border);
         }
         
         .project-content {
-            padding: 25px;
+            padding: 10px 0;
         }
         
         .project-title {
             font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
         .project-description {
-            color: var(--gray);
+            color: var(--secondary);
             margin-bottom: 20px;
         }
         
         .project-metrics {
             display: flex;
-            justify-content: space-between;
+            gap: 30px;
             margin-bottom: 20px;
         }
         
         .metric {
-            text-align: center;
+            text-align: left;
         }
         
         .metric-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
         
         .metric-label {
             font-size: 0.8rem;
-            color: var(--gray);
+            color: var(--secondary);
         }
         
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         
         .project-tag {
-            background: rgba(108, 99, 255, 0.2);
-            color: var(--primary);
-            padding: 5px 12px;
-            border-radius: 50px;
+            background: var(--light);
+            color: var(--secondary);
+            padding: 4px 10px;
+            border-radius: 2px;
             font-size: 0.8rem;
-            font-weight: 500;
+            border: var(--border);
         }
         
         /* Skills Section */
-        .skills {
-            background: var(--dark);
-        }
-        
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
         
         .skill-category {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0;
         }
         
         .skill-category h3 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .skill-category i {
-            color: var(--primary);
+            font-weight: 600;
         }
         
         .skill-list {
@@ -432,50 +318,84 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-bottom: 15px;
+            border-bottom: var(--border);
+        }
+        
+        .skill-item:last-child {
+            border-bottom: none;
         }
         
         .skill-name {
-            font-weight: 500;
+            font-weight: 400;
         }
         
-        .skill-bar {
-            width: 60%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
+        /* Experience Section */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
         
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 4px;
+        .experience-item {
+            padding-bottom: 30px;
+            border-bottom: var(--border);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .experience-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .experience-company {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .experience-date {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        .experience-description {
+            color: var(--secondary);
         }
         
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
             text-align: center;
+            background: var(--light);
         }
         
         .contact-content {
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
         
         .contact-btns {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
-            margin-top: 40px;
+            margin-top: 30px;
         }
         
         /* Footer */
         footer {
-            background: var(--darker);
             padding: 60px 0 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: var(--border);
         }
         
         .footer-content {
@@ -494,54 +414,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background: var(--light);
+            border-radius: 2px;
             transition: var(--transition);
-            color: var(--gray);
+            color: var(--secondary);
+            border: var(--border);
         }
         
         .social-link:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-5px);
         }
         
         .copyright {
             text-align: center;
-            color: var(--gray);
+            color: var(--secondary);
             font-size: 0.9rem;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        /* Анимации */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
+            border-top: var(--border);
         }
         
         /* Адаптивность */
-        @media (max-width: 992px) {
-            .hero-image {
-                display: none;
-            }
-            
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-            }
-            
-            .hero-btns {
-                justify-content: center;
-            }
-        }
-        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -552,11 +447,16 @@
             }
             
             .hero-title {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             
-            .section-title {
-                font-size: 2.5rem;
+            .project-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .project-image {
+                height: 200px;
             }
             
             .footer-content {
@@ -568,15 +468,15 @@
         
         @media (max-width: 576px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .section {
-                padding: 70px 0;
+                padding: 60px 0;
             }
             
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .project-metrics {
+                gap: 15px;
             }
         }
     </style>
@@ -586,16 +486,12 @@
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-gamepad logo-icon"></i>
-                    GameProd
-                </a>
+                <a href="#" class="logo">Creative Producer</a>
                 <ul class="nav-links">
-                    <li><a href="#home">Главная</a></li>
-                    <li><a href="#projects">Проекты</a></li>
-                    <li><a href="#skills">Навыки</a></li>
-                    <li><a href="#stats">Результаты</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -609,54 +505,45 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-rocket"></i> Креативный продюсер мобильных игр
+                    Mobile Games • Midcore Specialist
                 </div>
                 <h1 class="hero-title">
-                    Создаю <span>успешные</span> midcore проекты
+                    Creative Producer focused on successful midcore games
                 </h1>
                 <p class="hero-subtitle">
-                    Превращаю игровые концепции в прибыльные продукты с высокой удержкой и монетизацией. Специализируюсь на midcore играх с глубокой механикой и долгосрочной вовлеченностью.
+                    I transform game concepts into profitable products with high retention and monetization. Specializing in midcore games with deep mechanics and long-term engagement.
                 </p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn">
-                        <i class="fas fa-play-circle"></i> Смотреть проекты
+                        View Projects
                     </a>
                     <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-paper-plane"></i> Связаться со мной
+                        Contact Me
                     </a>
-                </div>
-            </div>
-            <div class="hero-image floating">
-                <div style="text-align: center; padding: 20px;">
-                    <i class="fas fa-mobile-alt" style="font-size: 4rem; margin-bottom: 20px;"></i>
-                    <div>Midcore Games Portfolio</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section id="stats" class="section stats">
+    <section class="section">
         <div class="container">
-            <h2 class="section-title">Мои результаты</h2>
-            <p class="section-subtitle">Ключевые метрики проектов, которыми я руководил</p>
-            
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-item">
                     <div class="stat-number">5+</div>
-                    <div class="stat-text">Лет в игровой индустрии</div>
+                    <div class="stat-text">Years in Game Industry</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-item">
                     <div class="stat-number">12M+</div>
-                    <div class="stat-text">Установок проектов</div>
+                    <div class="stat-text">Project Installs</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-item">
                     <div class="stat-number">45%</div>
-                    <div class="stat-text">Средняя удержание на D30</div>
+                    <div class="stat-text">D30 Retention</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-item">
                     <div class="stat-number">$25M+</div>
-                    <div class="stat-text">Общая выручка проектов</div>
+                    <div class="stat-text">Total Revenue</div>
                 </div>
             </div>
         </div>
@@ -665,26 +552,26 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Мои проекты</h2>
-            <p class="section-subtitle">Ключевые midcore проекты, разработанные под моим руководством</p>
+            <h2 class="section-title">Selected Projects</h2>
+            <p class="section-subtitle">Key midcore projects developed under my leadership</p>
             
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-header">
+                    <div class="project-image">
                         Galaxy Conquest
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Galaxy Conquest</h3>
-                        <p class="project-description">Стратегическая игра в космическом сеттинге с глубокой экономикой и PvP-механиками.</p>
+                        <p class="project-description">Strategic space-themed game with deep economy and PvP mechanics. Achieved top 10 strategy games in 15 countries.</p>
                         
                         <div class="project-metrics">
                             <div class="metric">
                                 <div class="metric-value">4.8★</div>
-                                <div class="metric-label">Рейтинг</div>
+                                <div class="metric-label">Rating</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">3.2M</div>
-                                <div class="metric-label">Установки</div>
+                                <div class="metric-label">Installs</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">$0.78</div>
@@ -693,29 +580,29 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag">Стратегия</span>
+                            <span class="project-tag">Strategy</span>
                             <span class="project-tag">PvP</span>
-                            <span class="project-tag">Космос</span>
+                            <span class="project-tag">Space</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-header">
+                    <div class="project-image">
                         Mythic Heroes
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Mythic Heroes</h3>
-                        <p class="project-description">RPG с коллекционированием героев, тактическими битвами и клановыми войнами.</p>
+                        <p class="project-description">RPG with hero collection, tactical battles, and clan wars. Featured by Apple in 12 countries.</p>
                         
                         <div class="project-metrics">
                             <div class="metric">
                                 <div class="metric-value">4.7★</div>
-                                <div class="metric-label">Рейтинг</div>
+                                <div class="metric-label">Rating</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">5.1M</div>
-                                <div class="metric-label">Установки</div>
+                                <div class="metric-label">Installs</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">$1.02</div>
@@ -725,28 +612,28 @@
                         
                         <div class="project-tags">
                             <span class="project-tag">RPG</span>
-                            <span class="project-tag">Тактика</span>
-                            <span class="project-tag">Фэнтези</span>
+                            <span class="project-tag">Tactical</span>
+                            <span class="project-tag">Fantasy</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-header">
+                    <div class="project-image">
                         Cyber Arena
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Cyber Arena</h3>
-                        <p class="project-description">Командный шутер с кастомизацией персонажей и киберспортивным режимом.</p>
+                        <p class="project-description">Team-based shooter with character customization and esports mode. Won Best Mobile Game 2022.</p>
                         
                         <div class="project-metrics">
                             <div class="metric">
                                 <div class="metric-value">4.6★</div>
-                                <div class="metric-label">Рейтинг</div>
+                                <div class="metric-label">Rating</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">2.8M</div>
-                                <div class="metric-label">Установки</div>
+                                <div class="metric-label">Installs</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">$0.65</div>
@@ -755,8 +642,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag">Шутер</span>
-                            <span class="project-tag">Киберпанк</span>
+                            <span class="project-tag">Shooter</span>
+                            <span class="project-tag">Cyberpunk</span>
                             <span class="project-tag">PvP</span>
                         </div>
                     </div>
@@ -766,82 +653,113 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section skills">
+    <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Мои навыки</h2>
-            <p class="section-subtitle">Ключевые компетенции в разработке и продюсировании мобильных игр</p>
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">Key skills in mobile game development and production</p>
             
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3><i class="fas fa-lightbulb"></i> Креативное лидерство</h3>
+                    <h3>Creative Leadership</h3>
                     <div class="skill-list">
                         <div class="skill-item">
-                            <span class="skill-name">Геймдизайн</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
+                            <span class="skill-name">Game Design</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Концепция проектов</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
+                            <span class="skill-name">Concept Development</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Анализ рынка</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
+                            <span class="skill-name">Market Analysis</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Creative Direction</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Продуктовая аналитика</h3>
+                    <h3>Product Analytics</h3>
                     <div class="skill-list">
                         <div class="skill-item">
-                            <span class="skill-name">Метрики игр</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 92%"></div>
-                            </div>
+                            <span class="skill-name">Game Metrics</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">A/B тестирование</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
+                            <span class="skill-name">A/B Testing</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Монетизация</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 94%"></div>
-                            </div>
+                            <span class="skill-name">Monetization</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Retention Analysis</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fas fa-users"></i> Управление</h3>
+                    <h3>Production Management</h3>
                     <div class="skill-list">
                         <div class="skill-item">
-                            <span class="skill-name">Командная разработка</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
+                            <span class="skill-name">Team Leadership</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Планирование релизов</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 87%"></div>
-                            </div>
+                            <span class="skill-name">Release Planning</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Коммуникация</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 93%"></div>
-                            </div>
+                            <span class="skill-name">Stakeholder Communication</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Budget Management</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">My career journey in the game industry</p>
+            
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Senior Creative Producer</h3>
+                            <div class="experience-company">Nexus Games • San Francisco</div>
+                        </div>
+                        <div class="experience-date">2020 - Present</div>
+                    </div>
+                    <p class="experience-description">
+                        Lead production of midcore mobile titles with focus on strategy and RPG genres. Manage teams of 15-25 people. Responsible for game vision, product strategy, and business performance.
+                    </p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Game Producer</h3>
+                            <div class="experience-company">Quantum Interactive • Seattle</div>
+                        </div>
+                        <div class="experience-date">2017 - 2020</div>
+                    </div>
+                    <p class="experience-description">
+                        Produced live operations for successful midcore titles. Implemented features that increased retention by 15% and revenue by 22%. Managed cross-functional teams of developers, artists, and designers.
+                    </p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Associate Producer</h3>
+                            <div class="experience-company">Pixel Forge Studios • Austin</div>
+                        </div>
+                        <div class="experience-date">2015 - 2017</div>
+                    </div>
+                    <p class="experience-description">
+                        Supported production of casual and midcore mobile games. Coordinated between development, art, and QA teams. Assisted in game design and feature specification.
+                    </p>
                 </div>
             </div>
         </div>
@@ -851,15 +769,15 @@
     <section id="contact" class="section contact">
         <div class="container">
             <div class="contact-content">
-                <h2 class="section-title">Давайте создадим следующую хитовую игру вместе</h2>
-                <p class="section-subtitle">Готов обсудить ваши проекты и предложить решения для достижения успеха в мобильном гейминге</p>
+                <h2 class="section-title">Let's Create Together</h2>
+                <p class="section-subtitle">Ready to discuss your next project and how we can achieve success in mobile gaming</p>
                 
                 <div class="contact-btns">
                     <a href="mailto:hello@example.com" class="btn">
-                        <i class="fas fa-envelope"></i> Написать мне
+                        Email Me
                     </a>
                     <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Скачать резюме
+                        Download Resume
                     </a>
                 </div>
             </div>
@@ -870,17 +788,11 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">
-                    <i class="fas fa-gamepad logo-icon"></i>
-                    GameProd
-                </div>
+                <div class="logo">Creative Producer</div>
                 
                 <div class="social-links">
                     <a href="#" class="social-link">
                         <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-telegram"></i>
                     </a>
                     <a href="#" class="social-link">
                         <i class="fab fa-twitter"></i>
@@ -892,7 +804,7 @@
             </div>
             
             <div class="copyright">
-                &copy; 2023 Креативный продюсер мобильных игр. Все права защищены.
+                &copy; 2023 Creative Producer. All rights reserved.
             </div>
         </div>
     </footer>
@@ -901,7 +813,6 @@
         // Мобильное меню
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-        const header = document.getElementById('header');
         
         hamburger.addEventListener('click', () => {
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
@@ -916,15 +827,6 @@
             });
         });
         
-        // Изменение header при скролле
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
         // Плавная прокрутка
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -936,7 +838,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
                 }
@@ -958,9 +860,9 @@
             });
         }, observerOptions);
         
-        document.querySelectorAll('.stat-card, .project-card, .skill-category').forEach(el => {
+        document.querySelectorAll('.project-card, .skill-category, .experience-item').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
+            el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
