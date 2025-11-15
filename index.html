@@ -314,6 +314,85 @@
             border: var(--border);
         }
         
+        /* Videos Section */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .video-item {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: var(--border);
+        }
+        
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: var(--light);
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .video-item:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .video-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        
+        .video-item:hover .video-play-icon {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.9);
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        
+        .video-description {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            line-height: 1.5;
+        }
+        
         /* Skills Section */
         .skills-container {
             display: grid;
@@ -482,6 +561,10 @@
                 height: 200px;
             }
             
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             .footer-content {
                 flex-direction: column;
                 gap: 30px;
@@ -501,6 +584,10 @@
             .project-metrics {
                 gap: 15px;
             }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -512,6 +599,7 @@
                 <a href="#" class="logo">Creative Producer</a>
                 <ul class="nav-links">
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#videos">Videos</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -798,6 +886,142 @@
         </div>
     </section>
 
+    <!-- Videos Section -->
+    <section id="videos" class="section">
+        <div class="container">
+            <h2 class="section-title">Videos</h2>
+            <p class="section-subtitle">Gameplay videos, trailers and development insights</p>
+            
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/333333/FFFFFF?text=Gameplay+Trailer" alt="World War Heroes Gameplay">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">World War Heroes Gameplay</h3>
+                        <p class="video-description">Intense PvP action in this WWII FPS with realistic graphics and tactical gameplay.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/555555/FFFFFF?text=Development+Diary" alt="Kingdom Clash Development">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Kingdom Clash Development</h3>
+                        <p class="video-description">Behind the scenes look at creating medieval strategy mechanics and unit balancing.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/777777/FFFFFF?text=Air+Combat+Showcase" alt="Sky Combat 2 Showcase">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Sky Combat 2 Showcase</h3>
+                        <p class="video-description">Epic dogfights and aerial maneuvers in this intense air combat simulator.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/444444/FFFFFF?text=Monetization+Strategies" alt="Monetization Deep Dive">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Monetization Deep Dive</h3>
+                        <p class="video-description">Analysis of successful monetization strategies in midcore mobile games.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 5 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/666666/FFFFFF?text=UI%2FUX+Design" alt="UI/UX Design Process">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">UI/UX Design Process</h3>
+                        <p class="video-description">Creating intuitive interfaces for complex game mechanics and player progression.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 6 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/222222/FFFFFF?text=Player+Retention" alt="Retention Strategies">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Retention Strategies</h3>
+                        <p class="video-description">How we achieve 45% D30 retention through engaging gameplay loops.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 7 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/888888/FFFFFF?text=Live+Ops" alt="Live Operations">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Live Operations</h3>
+                        <p class="video-description">Managing ongoing content updates and player engagement strategies.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 8 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/999999/FFFFFF?text=Team+Leadership" alt="Team Leadership">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Team Leadership</h3>
+                        <p class="video-description">Managing cross-functional teams of 15-25 people in game development.</p>
+                    </div>
+                </div>
+                
+                <!-- Video 9 -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x225/AAAAAA/000000?text=Future+Projects" alt="Future Projects">
+                        <div class="video-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Future Projects</h3>
+                        <p class="video-description">Sneak peek at upcoming midcore games and innovative gameplay concepts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
@@ -884,134 +1108,4 @@
                 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">Game Producer</h3>
-                            <div class="experience-company">Quantum Interactive • Seattle</div>
-                        </div>
-                        <div class="experience-date">2017 - 2020</div>
-                    </div>
-                    <p class="experience-description">
-                        Produced live operations for successful midcore titles. Implemented features that increased retention by 15% and revenue by 22%. Managed cross-functional teams of developers, artists, and designers.
-                    </p>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">Associate Producer</h3>
-                            <div class="experience-company">Pixel Forge Studios • Austin</div>
-                        </div>
-                        <div class="experience-date">2015 - 2017</div>
-                    </div>
-                    <p class="experience-description">
-                        Supported production of casual and midcore mobile games. Coordinated between development, art, and QA teams. Assisted in game design and feature specification.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title">Let's Create Together</h2>
-                <p class="section-subtitle">Ready to discuss your next project and how we can achieve success in mobile gaming</p>
-                
-                <div class="contact-btns">
-                    <a href="mailto:hello@example.com" class="btn">
-                        Email Me
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        Download Resume
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">Creative Producer</div>
-                
-                <div class="social-links">
-                    <a href="#" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                &copy; 2023 Creative Producer. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Мобильное меню
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-        
-        // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navLinks.style.display = 'none';
-                }
-            });
-        });
-        
-        // Плавная прокрутка
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Анимация появления элементов при скролле
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.project-card, .skill-category, .experience-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+                       
