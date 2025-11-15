@@ -1108,4 +1108,140 @@
                 
                 <div class="experience-item">
                     <div class="experience-header">
+                         </p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Game Producer</h3>
+                            <div class="experience-company">Quantum Interactive • Seattle</div>
+                        </div>
+                        <div class="experience-date">2017 - 2020</div>
+                    </div>
+                    <p class="experience-description">
+                        Produced live operations for successful midcore titles. Implemented features that increased retention by 15% and revenue by 22%. Managed cross-functional teams of developers, artists, and designers.
+                    </p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Associate Producer</h3>
+                            <div class="experience-company">Pixel Forge Studios • Austin</div>
+                        </div>
+                        <div class="experience-date">2015 - 2017</div>
+                    </div>
+                    <p class="experience-description">
+                        Supported production of casual and midcore mobile games. Coordinated between development, art, and QA teams. Assisted in game design and feature specification.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Let's Create Together</h2>
+                <p class="section-subtitle">Ready to discuss your next project and how we can achieve success in mobile gaming</p>
+                
+                <div class="contact-btns">
+                    <a href="mailto:hello@example.com" class="btn">
+                        Email Me
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Creative Producer</div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 Creative Producer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.project-card, .skill-category, .experience-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
                        
