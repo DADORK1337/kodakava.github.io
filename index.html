@@ -816,6 +816,48 @@
                 font-size: 2rem;
             }
         }
+        /* VIMEO VIDEO STYLES */
+        .vimeo-video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .vimeo-video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        /* Скрываем элементы управления Vimeo когда видео не воспроизводится */
+        .vimeo-video-wrapper iframe {
+            pointer-events: none; /* Отключаем клики по iframe когда показываем overlay */
+        }
+
+        .vimeo-video-wrapper:hover .video-overlay {
+            opacity: 1;
+        }
+
+        /* Для большого видео */
+        .video-item-large .vimeo-video-wrapper iframe {
+            min-height: 400px;
+        }
+
+        /* Адаптивность для Vimeo видео */
+        @media (max-width: 768px) {
+            .video-item-large .vimeo-video-wrapper iframe {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-item-large .vimeo-video-wrapper iframe {
+                min-height: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -1005,15 +1047,23 @@
         <p class="section-subtitle fade-in delay-1">Latest video content from our projects</p>
 
         <div class="videos-grid">
-            <!-- Большое видео (занимает 2 колонки) -->
-            <div class="video-item video-item-large fade-in-scale delay-1" onclick="openVideoModal('729904211')">
-                <img src="https://i.vimeocdn.com/video/1467827452-6b8c8c4f4f5d7e8c9f8e7d6c5b4a3e2f?mw=1200&mh=675" alt="Main Trailer">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+            <!-- Большое видео Vimeo (занимает 2 колонки) -->
+            <div class="video-item video-item-large fade-in-scale delay-1">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
                 <div class="video-label">Featured</div>
             </div>
-        </div>
+
+
     </div>
 </section>
 
@@ -1024,58 +1074,138 @@
         <p class="section-subtitle fade-in delay-1">Latest video content from our projects</p>
 
         <div class="videos-grid">
-            <div class="video-item fade-in-scale delay-1" onclick="openVideoModal('729904211')">
-                <img src="https://i.vimeocdn.com/video/1467827452-6b8c8c4f4f5d7e8c9f8e7d6c5b4a3e2f?mw=1200&mh=675" alt="Game Trailer 1">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+            <!-- Video 1 -->
+            <div class="video-item fade-in-scale delay-1">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-            <div class="video-item fade-in-scale delay-2" onclick="openVideoModal('730123456')">
-                <img src="https://i.vimeocdn.com/video/1467827453-7c9d9d5g5e6e8f9g0h9f8e7d6c5b4a?mw=1200&mh=675" alt="Game Trailer 2">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+
+            <!-- Video 2 -->
+            <div class="video-item fade-in-scale delay-2">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-            <div class="video-item fade-in-scale delay-3" onclick="openVideoModal('730234567')">
-                <img src="https://i.vimeocdn.com/video/1467827454-8d0e0e6h6f7f9g0h1i0g9f8e7d6c5?mw=1200&mh=675" alt="Game Trailer 3">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+
+            <!-- Video 3 -->
+            <div class="video-item fade-in-scale delay-3">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-            <div class="video-item fade-in-scale delay-1" onclick="openVideoModal('730345678')">
-                <img src="https://i.vimeocdn.com/video/1467827455-9e1f1f7i7g8g0h1i2j1h0g9f8e7d?mw=1200&mh=675" alt="Game Trailer 4">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+
+            <!-- Video 4 -->
+            <div class="video-item fade-in-scale delay-1">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-            <div class="video-item fade-in-scale delay-2" onclick="openVideoModal('730456789')">
-                <img src="https://i.vimeocdn.com/video/1467827456-0f2g2g8j8h9h1i2j3k2i1h0g9f8e?mw=1200&mh=675" alt="Game Trailer 5">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+
+            <!-- Video 5 -->
+            <div class="video-item fade-in-scale delay-2">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-            <div class="video-item fade-in-scale delay-3" onclick="openVideoModal('730567890')">
-                <img src="https://i.vimeocdn.com/video/1467827457-1g3h3h9k9i0i2j3k4l3j2i1h0g9f?mw=1200&mh=675" alt="Game Trailer 6">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+
+            <!-- Video 6 -->
+            <div class="video-item fade-in-scale delay-3">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-            <div class="video-item fade-in-scale delay-1" onclick="openVideoModal('730678901')">
-                <img src="https://i.vimeocdn.com/video/1467827458-2h4i4i0l0j1j3k4l5m4k3j2i1h0g?mw=1200&mh=675" alt="Game Trailer 7">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+
+            <!-- Video 7 -->
+            <div class="video-item fade-in-scale delay-1">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-            <div class="video-item fade-in-scale delay-2" onclick="openVideoModal('730789012')">
-                <img src="https://i.vimeocdn.com/video/1467827459-3i5j5j1m1k2k4l5m6n5l4k3j2i1h?mw=1200&mh=675" alt="Game Trailer 8">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+
+            <!-- Video 8 -->
+            <div class="video-item fade-in-scale delay-2">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
-            <div class="video-item fade-in-scale delay-3" onclick="openVideoModal('730890123')">
-                <img src="https://i.vimeocdn.com/video/1467827460-4j6k6k2n2l3l5m6n7o6m5l4k3j2i?mw=1200&mh=675" alt="Game Trailer 9">
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+
+            <!-- Video 9 -->
+            <div class="video-item fade-in-scale delay-3">
+                <div class="vimeo-video-wrapper" onclick="openVideoModal('729904211')">
+                    <iframe
+                            src="https://player.vimeo.com/video/729904211?h=da4d36b8b8&title=0&byline=0&portrait=0&dnt=1"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                    <div class="video-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
             </div>
         </div>
