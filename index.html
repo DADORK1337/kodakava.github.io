@@ -710,6 +710,112 @@
                 font-size: 0.9rem;
             }
         }
+        /* VIDEO GRID */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .video-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            aspect-ratio: 16/9;
+            cursor: pointer;
+        }
+
+        /* Большое видео - занимает 2 колонки */
+        .video-item-large {
+            grid-column: span 3;
+            grid-row: span 3;
+            aspect-ratio: 16/9;
+        }
+
+        .video-item-large .video-overlay i {
+            font-size: 3rem;
+        }
+
+        .video-label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .video-item:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .video-overlay i {
+            color: white;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        /* Адаптивность для большого видео */
+        @media (max-width: 768px) {
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-item-large {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .video-item-large .video-overlay i {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-item-large {
+                grid-column: span 1;
+            }
+
+            .video-item-large .video-overlay i {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -889,6 +995,25 @@
 
         </div>
 
+    </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos" class="section">
+    <div class="container">
+        <h2 class="section-title fade-in">Showreel</h2>
+        <p class="section-subtitle fade-in delay-1">Latest video content from our projects</p>
+
+        <div class="videos-grid">
+            <!-- Большое видео (занимает 2 колонки) -->
+            <div class="video-item video-item-large fade-in-scale delay-1" onclick="openVideoModal('729904211')">
+                <img src="https://i.vimeocdn.com/video/1467827452-6b8c8c4f4f5d7e8c9f8e7d6c5b4a3e2f?mw=1200&mh=675" alt="Main Trailer">
+                <div class="video-overlay">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="video-label">Featured</div>
+            </div>
+        </div>
     </div>
 </section>
 
