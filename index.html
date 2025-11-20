@@ -858,6 +858,45 @@
                 min-height: 200px;
             }
         }
+        /* EXPERIENCE ICONS */
+        .experience-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .experience-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light);
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .experience-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .experience-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
+        }
     </style>
 </head>
 
@@ -1284,7 +1323,10 @@
 
         <div class="experience-item fade-in-up delay-1">
             <div class="experience-header">
-                <h3 class="experience-title">Senior Producer</h3>
+                <div class="experience-title-wrapper">
+                    <div class="experience-icon">🚀</div>
+                    <h3 class="experience-title">Senior Producer</h3>
+                </div>
                 <div class="experience-date">2020 - Present</div>
             </div>
             <div class="experience-company">Mobile Games Studio</div>
@@ -1295,7 +1337,10 @@
 
         <div class="experience-item fade-in-up delay-2">
             <div class="experience-header">
-                <h3 class="experience-title">Game Producer</h3>
+                <div class="experience-title-wrapper">
+                    <div class="experience-icon">🎮</div>
+                    <h3 class="experience-title">Game Producer</h3>
+                </div>
                 <div class="experience-date">2017 - 2020</div>
             </div>
             <div class="experience-company">Indie Game Studio</div>
@@ -1303,9 +1348,13 @@
                 Managed development of casual mobile games, coordinated with art and programming teams, and implemented agile methodologies to improve development efficiency.
             </p>
         </div>
+
         <div class="experience-item fade-in-up delay-1">
             <div class="experience-header">
-                <h3 class="experience-title">Senior Producer</h3>
+                <div class="experience-title-wrapper">
+                    <div class="experience-icon">📱</div>
+                    <h3 class="experience-title">Senior Producer</h3>
+                </div>
                 <div class="experience-date">2020 - Present</div>
             </div>
             <div class="experience-company">Mobile Games Studio</div>
@@ -1313,9 +1362,13 @@
                 Leading production on multiple midcore mobile game projects, managing cross-functional teams of 20+ people, and overseeing development from concept to launch.
             </p>
         </div>
+
         <div class="experience-item fade-in-up delay-1">
             <div class="experience-header">
-                <h3 class="experience-title">Senior Producer</h3>
+                <div class="experience-title-wrapper">
+                    <div class="experience-icon">💼</div>
+                    <h3 class="experience-title">Senior Producer</h3>
+                </div>
                 <div class="experience-date">2020 - Present</div>
             </div>
             <div class="experience-company">Mobile Games Studio</div>
@@ -1323,9 +1376,13 @@
                 Leading production on multiple midcore mobile game projects, managing cross-functional teams of 20+ people, and overseeing development from concept to launch.
             </p>
         </div>
+
         <div class="experience-item fade-in-up delay-1">
             <div class="experience-header">
-                <h3 class="experience-title">Senior Producer</h3>
+                <div class="experience-title-wrapper">
+                    <div class="experience-icon">🌟</div>
+                    <h3 class="experience-title">Senior Producer</h3>
+                </div>
                 <div class="experience-date">2020 - Present</div>
             </div>
             <div class="experience-company">Mobile Games Studio</div>
