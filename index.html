@@ -89,7 +89,7 @@
             cursor: pointer;
         }
 
-        /* HERO SECTION (VIMEO POSTER) */
+        /* HERO VIDEO */
         .hero {
             position: relative;
             height: 100vh;
@@ -103,50 +103,76 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            cursor: pointer;
         }
 
-        /* Постер */
-        #poster {
-            position: absolute;
-            inset: 0;
+        #heroVideo {
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
-            cursor: pointer;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .sound-toggle-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: var(--transition);
+            z-index: 2;
+            transition: all 0.3s ease;
+            opacity: 1;
         }
 
-        #poster:hover {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
-        }
-
-        #poster div {
-            font-size: 90px;
-            color: white;
-            opacity: 0.85;
+        .sound-toggle-overlay.hidden {
+            opacity: 0;
             pointer-events: none;
-            transition: var(--transition);
         }
 
-        #poster:hover div {
-            transform: scale(1.1);
+        .sound-toggle-content {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 50px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
         }
 
-        /* Vimeo */
-        #vimeoPlayer {
-            display: none;
+        .sound-toggle-content:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .sound-toggle-content i {
+            font-size: 1.5rem;
+        }
+
+        /* Video overlay for better text readability */
+        .hero-video-container::after {
+            content: '';
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-        }
-
-        #vimeoPlayer iframe {
-            width: 100%;
-            height: 100%;
+            background: linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0.2) 0%,
+                    rgba(0,0,0,0.1) 50%,
+                    rgba(0,0,0,0.2) 100%
+            );
+            z-index: 1;
         }
 
         /* SECTION STYLES */
@@ -225,31 +251,33 @@
         /* PROJECTS */
         .projects-grid {
             display: grid;
-            gap: 50px;
+            gap: 80px;
         }
 
         .project-card {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
             align-items: center;
         }
 
         .project-image {
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             transition: var(--transition);
+            aspect-ratio: 16/9;
         }
 
         .project-image:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .project-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -278,6 +306,7 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             aspect-ratio: 16/9;
+            cursor: pointer;
         }
 
         .video-item:hover {
@@ -441,74 +470,6 @@
             font-size: 0.9rem;
         }
 
-        /* ADAPTIVE */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .nav-open {
-                display: flex !important;
-                flex-direction: column;
-                position: absolute;
-                right: 20px;
-                top: 60px;
-                background: white;
-                border: var(--border);
-                padding: 20px;
-                gap: 20px;
-                z-index: 1001;
-                box-shadow: var(--shadow);
-                border-radius: 8px;
-            }
-
-            .project-card {
-                grid-template-columns: 1fr;
-            }
-
-            #poster div {
-                font-size: 60px;
-            }
-
-            .videos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-
-            .experience-header {
-                flex-direction: column;
-                gap: 5px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .videos-grid {
-                grid-template-columns: 1fr;
-            }
-
-            #poster div {
-                font-size: 45px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 1.7rem;
-            }
-        }
         /* VIDEO MODAL */
         .video-modal {
             display: none;
@@ -550,6 +511,79 @@
             height: 100%;
             border: none;
         }
+
+        /* ADAPTIVE */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-open {
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                right: 20px;
+                top: 60px;
+                background: white;
+                border: var(--border);
+                padding: 20px;
+                gap: 20px;
+                z-index: 1001;
+                box-shadow: var(--shadow);
+                border-radius: 8px;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .sound-toggle-content {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .sound-toggle-content {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
     </style>
 </head>
 
@@ -575,26 +609,22 @@
 
 <!-- HERO -->
 <section id="home" class="hero">
-
     <div class="hero-video-container">
+        <!-- VIDEO -->
+        <video id="heroVideo" autoplay muted loop playsinline onclick="toggleVideoSound()">
+            <source src="https://dadork1337.github.io/kodakava.github.io/showreel.mp4" type="video/mp4">
+            <source src="https://dadork1337.github.io/kodakava.github.io/showreel.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
 
-        <!-- POSTER -->
-        <div id="poster" onclick="playShowreel()">
-            <div>▶</div>
+        <!-- SOUND TOGGLE OVERLAY -->
+        <div class="sound-toggle-overlay" onclick="toggleVideoSound()">
+            <div class="sound-toggle-content">
+                <i class="fas fa-volume-mute" id="soundIcon"></i>
+                <span>Click to unmute</span>
+            </div>
         </div>
-
-        <!-- VIMEO VIDEO -->
-        <div id="vimeoPlayer">
-            <iframe
-                    src="https://player.vimeo.com/video/729904211?autoplay=1&muted=0&playsinline=1"
-                    frameborder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
-        </div>
-
     </div>
-
 </section>
 
 <!-- PROJECTS -->
@@ -835,10 +865,72 @@
 
 <!-- JS -->
 <script>
-    function playShowreel() {
-        document.getElementById("poster").style.display = "none";
-        document.getElementById("vimeoPlayer").style.display = "block";
+    // Video Sound Toggle
+    function toggleVideoSound() {
+        const video = document.getElementById('heroVideo');
+        const soundIcon = document.getElementById('soundIcon');
+        const soundOverlay = document.querySelector('.sound-toggle-overlay');
+        const soundText = soundOverlay.querySelector('span');
+
+        if (video.muted) {
+            video.muted = false;
+            soundIcon.className = 'fas fa-volume-up';
+            soundText.textContent = 'Click to mute';
+            // Hide overlay after 2 seconds when sound is on
+            setTimeout(() => {
+                soundOverlay.classList.add('hidden');
+            }, 2000);
+        } else {
+            video.muted = true;
+            soundIcon.className = 'fas fa-volume-mute';
+            soundText.textContent = 'Click to unmute';
+            soundOverlay.classList.remove('hidden');
+        }
     }
+
+    // Show overlay when video is muted on hover
+    document.querySelector('.hero-video-container').addEventListener('mouseenter', function() {
+        const video = document.getElementById('heroVideo');
+        const soundOverlay = document.querySelector('.sound-toggle-overlay');
+
+        if (video.muted) {
+            soundOverlay.classList.remove('hidden');
+        }
+    });
+
+    document.querySelector('.hero-video-container').addEventListener('mouseleave', function() {
+        const video = document.getElementById('heroVideo');
+        const soundOverlay = document.querySelector('.sound-toggle-overlay');
+
+        if (!video.muted) {
+            soundOverlay.classList.add('hidden');
+        }
+    });
+
+    // Fallback if video fails to load
+    document.getElementById('heroVideo').addEventListener('error', function() {
+        console.log('Video failed to load, using fallback background');
+        this.style.display = 'none';
+        document.querySelector('.sound-toggle-overlay').style.display = 'none';
+        document.querySelector('.hero-video-container').style.background =
+            'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        document.querySelector('.hero-video-container').innerHTML += `
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Creative Producer</h1>
+                <p style="font-size: 1.5rem;">Mobile Games & Interactive Experiences</p>
+            </div>
+        `;
+    });
+
+    // Auto-hide overlay when video starts playing
+    document.getElementById('heroVideo').addEventListener('playing', function() {
+        const soundOverlay = document.querySelector('.sound-toggle-overlay');
+        setTimeout(() => {
+            if (this.muted) {
+                soundOverlay.classList.remove('hidden');
+            }
+        }, 1000);
+    });
 
     // MOBILE MENU
     const hamburger = document.querySelector(".hamburger");
