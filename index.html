@@ -974,6 +974,79 @@
                 padding: 15px;
             }
         }
+        /* HERO AVATAR ANIMATION */
+        .hero-avatar {
+            text-align: center;
+            position: relative;
+        }
+
+        .avatar-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 4px solid var(--light);
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .avatar-circle:hover {
+            transform: scale(1.1);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .avatar-circle:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Добавляем легкий эффект затемнения при наведении */
+        .avatar-circle::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .avatar-circle:hover::after {
+            opacity: 1;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .avatar-circle {
+                width: 150px;
+                height: 150px;
+            }
+
+            .avatar-circle:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .avatar-circle {
+                width: 120px;
+                height: 120px;
+                border-width: 3px;
+            }
+        }
     </style>
 </head>
 
@@ -1367,7 +1440,6 @@
                     <li>Hands-on experience with attribution platforms (AppsFlyer, Adjust) and analytics tools (BI).</li>
                     <li>Running A/B tests on creatives to optimize campaign performance.</li>
                     <li>Analyzing data to identify winning creatives (hero creatives) and determine the reasons behind their success.</li>
-                    <li>Developing and managing performance marketing budgets, ensuring efficient spend allocation across channels.</li>
                 </ul>
             </div>
             <div class="skill-category fade-in-left">
@@ -1385,6 +1457,8 @@
                     <li>Knowledge of video production and editing basics (working with editing timelines, basic proficiency in Adobe Premiere Pro/After Effects).</li>
                     <li>Understanding of ad network specifications and requirements (Facebook, Google UAC, TikTok, Unity LevelPlay, etc.).</li>
                     <li>Experience with project management tools (Jira, Asana, Trello).</li>
+                    <li>Budget Planning</li>
+                    <li>Risk Management</li>
                 </ul>
             </div>
         </div>
@@ -1400,14 +1474,27 @@
         <div class="experience-item fade-in-up delay-1">
             <div class="experience-header">
                 <div class="experience-title-wrapper">
-                    <div class="experience-icon">🚀</div>
-                    <h3 class="experience-title">Senior Producer</h3>
+                    <div class="experience-icon">🎯</div>
+                    <h3 class="experience-title">Midcore Creative Producer</h3>
                 </div>
-                <div class="experience-date">2020 - Present</div>
+                <div class="experience-date">December 2024 - Present</div>
             </div>
-            <div class="experience-company">Mobile Games Studio</div>
+            <div class="experience-company">Azur Games</div>
             <p class="experience-description">
-                Leading production on multiple midcore mobile game projects, managing cross-functional teams of 20+ people, and overseeing development from concept to launch.
+                Orchestrating the creative strategy and A/B testing roadmap for key mobile titles, overseeing the production of video, playable, and static ads. Managing a distributed creative pod of 50+ specialists (motion designers, 2D artists, ASO managers)
+            </p>
+        </div>
+        <div class="experience-item fade-in-up delay-1">
+            <div class="experience-header">
+                <div class="experience-title-wrapper">
+                    <div class="experience-icon">🚀</div>
+                    <h3 class="experience-title">Senior Creator Casual/Hyper-casual</h3>
+                </div>
+                <div class="experience-date">September 2021 - December 2024</div>
+            </div>
+            <div class="experience-company">Azur Games</div>
+            <p class="experience-description">
+                Leading the motion design direction for key game trailers and promotional materials, mentoring junior designers and collaborating with art, marketing, and VFX teams to create a cohesive and engaging player experience.
             </p>
         </div>
 
@@ -1415,13 +1502,13 @@
             <div class="experience-header">
                 <div class="experience-title-wrapper">
                     <div class="experience-icon">🎮</div>
-                    <h3 class="experience-title">Game Producer</h3>
+                    <h3 class="experience-title">Casual Creative Producer</h3>
                 </div>
-                <div class="experience-date">2017 - 2020</div>
+                <div class="experience-date">April 2021 - September 2021</div>
             </div>
-            <div class="experience-company">Indie Game Studio</div>
+            <div class="experience-company">Alfaleads</div>
             <p class="experience-description">
-                Managed development of casual mobile games, coordinated with art and programming teams, and implemented agile methodologies to improve development efficiency.
+                Established and managed the end-to-end outsourced production pipeline for casual game creatives, coordinating a network of 30+ freelance animators and designers to ensure consistent quality and on-time delivery for 5+ simultaneous projects.
             </p>
         </div>
 
@@ -1429,13 +1516,13 @@
             <div class="experience-header">
                 <div class="experience-title-wrapper">
                     <div class="experience-icon">📱</div>
-                    <h3 class="experience-title">Senior Producer</h3>
+                    <h3 class="experience-title">Senior Motion Designer</h3>
                 </div>
-                <div class="experience-date">2020 - Present</div>
+                <div class="experience-date">May 2020 - April 2021</div>
             </div>
-            <div class="experience-company">Mobile Games Studio</div>
+            <div class="experience-company">AdvGo42</div>
             <p class="experience-description">
-                Leading production on multiple midcore mobile game projects, managing cross-functional teams of 20+ people, and overseeing development from concept to launch.
+                Leading the motion design direction for key game trailers and promotional materials, mentoring junior designers and collaborating with art, marketing, and VFX teams to create a cohesive and engaging player experience.
             </p>
         </div>
 
@@ -1443,11 +1530,11 @@
             <div class="experience-header">
                 <div class="experience-title-wrapper">
                     <div class="experience-icon">💼</div>
-                    <h3 class="experience-title">Senior Producer</h3>
+                    <h3 class="experience-title">Middle Motion Designer</h3>
                 </div>
-                <div class="experience-date">2020 - Present</div>
+                <div class="experience-date">March 2019 - May 2020</div>
             </div>
-            <div class="experience-company">Mobile Games Studio</div>
+            <div class="experience-company">MotionAds</div>
             <p class="experience-description">
                 Leading production on multiple midcore mobile game projects, managing cross-functional teams of 20+ people, and overseeing development from concept to launch.
             </p>
@@ -1457,11 +1544,11 @@
             <div class="experience-header">
                 <div class="experience-title-wrapper">
                     <div class="experience-icon">🌟</div>
-                    <h3 class="experience-title">Senior Producer</h3>
+                    <h3 class="experience-title">Motion-designer</h3>
                 </div>
-                <div class="experience-date">2020 - Present</div>
+                <div class="experience-date">February 2018 — February 2019</div>
             </div>
-            <div class="experience-company">Mobile Games Studio</div>
+            <div class="experience-company">ADQuantum</div>
             <p class="experience-description">
                 Leading production on multiple midcore mobile game projects, managing cross-functional teams of 20+ people, and overseeing development from concept to launch.
             </p>
