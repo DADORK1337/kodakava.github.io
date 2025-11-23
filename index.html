@@ -1047,15 +1047,44 @@
                 border-width: 3px;
             }
         }
+        /* Style for video link */
+        .hero-video-container {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .hero-video-container:hover {
+            opacity: 0.95;
+        }
     </style>
 </head>
+
+<!-- Добавьте этот script в конец body -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const avatar = document.querySelector('.avatar-circle');
+        const contactSection = document.getElementById('contact');
+
+        if (avatar && contactSection) {
+            avatar.style.cursor = 'pointer';
+            avatar.addEventListener('click', function() {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        }
+    });
+</script>
 
 <body>
 
 <header>
     <div class="container">
         <nav class="navbar">
-            <div class="logo">Konstantin Butko - Creative Producer</div>
+            <div class="logo">Konstantin Butko</div>
 
             <ul class="nav-links">
                 <li><a href="#home">About me</a></li>
@@ -1073,15 +1102,14 @@
 
 <!-- HERO VIDEO -->
 <section class="video-hero">
-    <div class="hero-video-container">
+    <a href="#videos" class="hero-video-container">
         <!-- VIDEO -->
-        <video id="heroVideo" autoplay muted loop playsinline onclick="toggleVideoSound()">
+        <video id="heroVideo" autoplay muted loop playsinline>
             <source src="https://dadork1337.github.io/kodakava.github.io/Шоурил%202025%20(4).mp4" type="video/mp4">
             <source src="https://dadork1337.github.io/kodakava.github.io/showreel.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
-    </div>
-    </div>
+    </a>
 </section>
 
 <!-- HERO CONTENT SECTION -->
@@ -1089,7 +1117,7 @@
     <div class="container">
         <div class="hero-content-wrapper fade-in">
             <div class="hero-avatar">
-                <div class="avatar-circle">
+                <div class="avatar-circle" style="cursor: pointer;" title="Click to contact">
                     <img src="https://i.imgur.com/CsP5LJ0.png" alt="Creative Producer">
                 </div>
             </div>
@@ -1101,7 +1129,7 @@
                     Creative Producer focused on successful midcore games
                 </h1>
                 <p class="hero-subtitle">
-                    I craft successful marketing strategies for mobile games, transforming concepts into profitable products with high retention and monetization.
+                    Hi, my name is Konstantin. I craft successful marketing strategies for mobile games, transforming concepts into profitable products with high retention and monetization.
 
                     My focus: Midcore games with deep mechanics and long-term engagement.
                 </p>
@@ -1481,7 +1509,7 @@
             </div>
             <div class="experience-company">Azur Games</div>
             <p class="experience-description">
-                Orchestrating the creative strategy and A/B testing roadmap for key mobile titles, overseeing the production of video, playable, and static ads. Managing a distributed creative pod of 50+ specialists (motion designers, 2D artists, ASO managers)
+                Orchestrating the creative strategy and A/B testing roadmap for key mobile titles, overseeing the production of video, playable, and static ads. Managing a distributed creative pod of 50+ specialists (motion designers, 2D artists, developers, ASO managers)
             </p>
         </div>
         <div class="experience-item fade-in-up delay-1">
@@ -1494,7 +1522,7 @@
             </div>
             <div class="experience-company">Azur Games</div>
             <p class="experience-description">
-                Leading the motion design direction for key game trailers and promotional materials, mentoring junior designers and collaborating with art, marketing, and VFX teams to create a cohesive and engaging player experience.
+                Leading data-driven creative production for casual and hyper-casual portfolios, managing the entire lifecycle from trend analysis and concepting to mass production and performance optimization.
             </p>
         </div>
 
@@ -1508,7 +1536,7 @@
             </div>
             <div class="experience-company">Alfaleads</div>
             <p class="experience-description">
-                Established and managed the end-to-end outsourced production pipeline for casual game creatives, coordinating a network of 30+ freelance animators and designers to ensure consistent quality and on-time delivery for 5+ simultaneous projects.
+                Established and managed the end-to-end outsourced production pipeline for casual game creatives, coordinating a network of 15+ freelance animators and designers to ensure consistent quality and on-time delivery for 10 simultaneous projects.
             </p>
         </div>
 
@@ -1536,7 +1564,7 @@
             </div>
             <div class="experience-company">MotionAds</div>
             <p class="experience-description">
-                Leading production on multiple midcore mobile game projects, managing cross-functional teams of 20+ people, and overseeing development from concept to launch.
+                Participated in the full advertising cycle: from idea generation in brainstorming sessions to producing 2D/3D videos, adapting creatives for TikTok, and analyzing their performance for further iteration.
             </p>
         </div>
 
@@ -1550,7 +1578,7 @@
             </div>
             <div class="experience-company">ADQuantum</div>
             <p class="experience-description">
-                Leading production on multiple midcore mobile game projects, managing cross-functional teams of 20+ people, and overseeing development from concept to launch.
+                Developed high-quality 2D and 3D motion creatives from provided briefs, ensuring alignment with project goals through active participation in production team meetings.
             </p>
         </div>
     </div>
@@ -1687,6 +1715,14 @@
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('nav-open');
+        });
+    });
+
+    // Add click handler to video
+    document.querySelector('.hero-video-container').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('videos').scrollIntoView({
+            behavior: 'smooth'
         });
     });
 
@@ -1870,6 +1906,7 @@
             }
         });
     }
+
 
 
     // Initial check
